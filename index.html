@@ -1,21 +1,126 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KeeperCard - современное решение для управления картами">
     <meta name="keywords" content="карты, управление, keeper, digital">
     <title>KeeperCard</title>
-    
-<H1>ПРИВЕТ ЛУНАТИКАМ!</H1>
-   
 
-    <!-- <footer class="footer">
+    <!-- Подключение главного файла стилей -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <a href="#"><img class="header__logo" src="images/logo.png" width="70" height="70" alt="logo"></a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Продукт</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Заказ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__wrapper">
+                    <div class="hero__img"><img src="images/20241130_191310.jpg" width="530" height="530" alt=""></div>
+                    <div class="hero__content">
+                        <div class="hero__order">
+                            <h1 class="hero__title">KeeperCard</h1>
+                            <p class="hero__text">Карманный нож‑«кредитка». Тонкий. Лёгкий. Всегда под рукой.</p>
+                            <span class="hero__price">9 490 ₽</span>
+                            <a href="" class="hero__button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-shopping-cart mr-2 h-5 w-5">
+                                    <circle cx="8" cy="21" r="1"></circle>
+                                    <circle cx="19" cy="21" r="1"></circle>
+                                    <path
+                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                    </path>
+                                </svg>
+                                Купить сейчас
+                            </a>
+                        </div>
+                        <div class="hero__advantages section__block">
+                            <h2 class="hero__advantages-title section__title">
+                                <svg class="hero__advantages-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-sparkles h-5 w-5 text-accent">
+                                    <path
+                                        d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                    </path>
+                                    <path d="M20 3v4"></path>
+                                    <path d="M22 5h-4"></path>
+                                    <path d="M4 17v2"></path>
+                                    <path d="M5 18H3"></path>
+                                </svg>
+                                Премущества
+                            </h2>
+
+                            <ul class="hero__advantages-list section__list">
+                                <li class="hero__advantages-item">Формат кредитной карты — помещается в кошелёк</li>
+                                <li class="hero__advantages-item">Лёгкий и прочный</li>
+                                <li class="hero__advantages-item">Съёмное лезвие, простая сборка</li>
+                            </ul>
+                        </div>
+                        <div class="hero__specs section__block">
+                            <h2 class="hero__specs-title section__title">
+                                <svg class="hero__specs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-shield-check h-5 w-5 text-primary">
+                                    <path
+                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                    </path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                Характеристики
+                            </h2>
+
+                            <ul class="hero__specs-list">
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Материал</h3>
+                                    <span class="hero__specs-value">Нержавеющая сталь, ABS</span>
+                                </li>
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Вес</h3>
+                                    <span class="hero__specs-value">28 г</span>
+                                </li>
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Размеры</h3>
+                                    <span class="hero__specs-value">85.6 × 54 × 2.2 мм</span>
+                                </li>
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Блокировка</h3>
+                                    <span class="hero__specs-value">Фиксатор лезвия (liner-lock)</span>
+                                </li>
+                             
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<!-- <footer class="footer">
         <div class="container">
             <p>&copy; 2024 KeeperCard. Все права защищены.</p>
         </div>
     </footer> -->
 
-    <script src="./js/script.js"></script>
-</body>
+<script src="./js/script.js"></script>
+
 </html>
