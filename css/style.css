@@ -166,7 +166,7 @@ body.menu-open {
   gap: 16px;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 48px;
 }
 @media (max-width: 768px) {
   .hero__specs-list {
@@ -184,7 +184,117 @@ body.menu-open {
 .hero__specs-value {
   font-weight: 500;
 }
+.hero__specs-text {
+  font-size: 18px;
+  line-height: 24px;
+  color: rgb(176, 176, 181);
+}
 
+.hero__FAQ {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  margin: 20px;
+}
+
+.hero__FAQ-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.hero__FAQ-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  border-radius: 2px;
+}
+
+.hero__FAQ-list {
+  list-style: none;
+}
+
+.hero__FAQ-item {
+  border-bottom: 1px solid #eaeaea;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hero__FAQ-item:last-child {
+  border-bottom: none;
+}
+
+.hero__FAQ-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  color: #34495e;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.hero__FAQ-question::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: #3498db;
+  transition: transform 0.3s ease;
+}
+
+.hero__FAQ-answer {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  color: #7f8c8d;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked + .hero__FAQ-question {
+  color: #3498db;
+}
+
+input[type=checkbox]:checked + .hero__FAQ-question::after {
+  content: "-";
+  transform: rotate(0deg);
+}
+
+input[type=checkbox]:checked + .hero__FAQ-question + .hero__FAQ-answer {
+  max-height: 200px;
+  opacity: 1;
+  padding: 0 0 20px 0;
+}
+
+@media (max-width: 768px) {
+  .hero__FAQ {
+    padding: 25px;
+  }
+  .hero__FAQ-title {
+    font-size: 2rem;
+  }
+  .hero__FAQ-question {
+    font-size: 1.1rem;
+    padding: 15px 0;
+  }
+}
 .section__block {
   background-color: rgb(24, 24, 27);
   border: 1px solid rgb(44, 44, 48);
@@ -203,6 +313,6 @@ body.menu-open {
   flex-direction: column;
   gap: 5px;
   margin: 0;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 20px;
   font-size: 1.125rem;
 }/*# sourceMappingURL=style.css.map */
