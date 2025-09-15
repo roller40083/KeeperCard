@@ -8,7 +8,135 @@
 
     &__img {
         width: 530px;
-        height: 530px;
+        height: auto;
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            &__main {
+                width: 100%;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+
+                /* фиксированный контейнер для главной картинки — предотвращает "прыжки" при смене изображений */
+                height: 360px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #0b0b0b; /* фон для «поля» изображения (подложка при letterbox) */
+                position: relative;
+
+                img {
+                    /* чтобы фото не обрезалось — подстраиваем размеры в пределах контейнера */
+                    border-radius: 15px;
+                    display: block;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: auto;
+                    height: auto;
+                    object-fit: contain; /* НЕ обрезает, масштабирует по меньшей стороне */
+                    object-position: center;
+                    transition: transform 0.36s ease, opacity 0.28s ease;
+                }
+
+                /* класс для анимации при смене фото */
+                &.is-changing img {
+                    transform: scale(1.03);
+                    opacity: 0.6;
+                }
+            }
+
+            /* адаптив: уменьшение высоты на узких экранах */
+            @media (max-width: 768px) {
+                &__main {
+                    height: 260px;
+                }
+            }
+
+            @media (max-width: 420px) {
+                &__main {
+                    height: 200px;
+                }
+            }
+
+            &__thumbs {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                flex-wrap: nowrap;
+
+                /* горизонтальная прокрутка для превью, часть мини-картинок уходит за границу */
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 6px;
+
+                /* тонкий скроллбар */
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255,255,255,0.12) transparent;
+
+                &::-webkit-scrollbar {
+                    height: 8px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                    border-radius: 4px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255,255,255,0.12);
+                    border-radius: 4px;
+                }
+            }
+
+            &__thumb {
+                background: transparent;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 120px; /* сузил превью, чтобы больше умещалось */
+                height: 72px;
+                flex: 0 0 auto; /* важно, чтобы не сжимались при прокрутке */
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+                transition: transform 0.16s ease, box-shadow 0.16s ease;
+            }
+
+            &__thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            &__thumb:active,
+            &__thumb:focus,
+            &__thumb:hover {
+                transform: translateY(-3px);
+            }
+
+            /* последняя "ещё" кнопка */
+            &__thumb--more {
+                width: 64px;
+                height: 40px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                background: rgba(0,0,0,0.45);
+                color: #fff;
+                flex: 0 0 auto;
+            }
+
+            &__hidden {
+                display: none; /* хранит дополнительные фото; используется JS */
+            }
+        }
     }
 
     &__content {
@@ -61,7 +189,6 @@
 
     // Блок премуществ 
     &__advantages {
-        margin: 0 0 24px;
     }
 
     &__advantages-title {
@@ -75,7 +202,6 @@
     &__advantages-list {}
 
     &_specs {
-        margin: 0 0 24px;
     }
 
     &__specs-title {
@@ -117,6 +243,7 @@
         font-size: 18px;
         line-height: 24px;
         color: rgb(176, 176, 181);
+        margin: 0;
     }
 
 
@@ -129,38 +256,28 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 800px;
+            max-width: 480px;
             padding: 40px;
-            margin: 20px;
         }
         
         .hero__FAQ-title {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+            font-size: 2rem;
+            margin-bottom: 48px;
             position: relative;
-            padding-bottom: 15px;
         }
         
-        .hero__FAQ-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, #3498db, #2ecc71);
-            border-radius: 2px;
-        }
         
-        .hero__FAQ-list {
+        .hero__FAQ-list {            
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
         .hero__FAQ-item {
-            border-bottom: 1px solid #eaeaea;
             overflow: hidden;
             transition: all 0.3s ease;
         }
@@ -173,18 +290,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
             cursor: pointer;
-            color: #34495e;
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 00;
             transition: color 0.3s ease;
         }
         
         .hero__FAQ-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: #3498db;
+            content: '▼';
+            font-size: 1rem;
+            color: #ffffff;
             transition: transform 0.3s ease;
         }
         
@@ -193,7 +308,6 @@
             max-height: 0;
             opacity: 0;
             padding: 0;
-            color: #7f8c8d;
             line-height: 1.6;
             transition: all 0.3s ease;
         }
@@ -203,11 +317,11 @@
         }
         
         input[type="checkbox"]:checked + .hero__FAQ-question {
-            color: #3498db;
+            color: rgba(65, 255, 192, 0.992);
         }
         
         input[type="checkbox"]:checked + .hero__FAQ-question::after {
-            content: '-';
+            content: '▲';
             transform: rotate(0deg);
         }
         

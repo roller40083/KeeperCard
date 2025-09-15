@@ -34,7 +34,38 @@
         <section class="hero">
             <div class="container">
                 <div class="hero__wrapper">
-                    <div class="hero__img"><img src="images/20241130_191310.jpg" width="530" height="530" alt=""></div>
+                    <div class="hero__img">
+                        <div class="gallery">
+                            <div class="gallery__main">
+                                <img src="images/20241130_191310.jpg" alt="KeeperCard main" id="galleryMain">
+                            </div>
+
+                            <div class="gallery__thumbs" aria-label="gallery thumbnails">
+                                <button class="gallery__thumb" type="button" data-src="images/photo_2025-08-21_12-38-49 (2).jpg">
+                                    <img src="images/photo_2025-08-21_12-38-49 (2).jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button" data-src="images/photo_2025-08-21_12-38-49.jpg">
+                                    <img src="images/photo_2025-08-21_12-38-49.jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button" data-src="images/photo_2025-08-21_12-38-50 (2).jpg">
+                                    <img src="images/photo_2025-08-21_12-38-50 (2).jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button" data-src="images/photo_2025-08-21_12-38-50.jpg">
+                                    <img src="images/photo_2025-08-21_12-38-50.jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button" data-src="images/photo_2025-08-21_12-38-50.jpg">
+                                    <img src="images/photo_2025-08-21_12-38-50.jpg" alt="">
+                                </button>
+                                             
+                            </div>
+
+                            <!-- скрытые фото для «выдвижки» — добавьте свои изображения сюда -->
+                            <div class="gallery__hidden" aria-hidden="true">
+                                <img src="images/photo4.jpg" alt="">
+                                <img src="images/photo5.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                     <div class="hero__content">
                         <div class="hero__order">
                             <h1 class="hero__title">KeeperCard</h1>
@@ -112,7 +143,9 @@
                         </div>
 
                         <div class="hero__FAQ section__block">
-                            <h2 class="hero__FAQ-title hero__title">FAQ</h2>
+                            <h2 class="hero__FAQ-title hero__title">
+                                <img src="images/question-circle-svgrepo-com.svg" width="27" height="27" alt="">
+                                FAQ</h2>
                             <ul class="hero__FAQ-list">
                                 <li class="hero__FAQ-item">
                                     <input type="checkbox" id="question1">
