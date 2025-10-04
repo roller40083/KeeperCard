@@ -1,0 +1,310 @@
+// Переменные
+$footer-bg: #000000;
+$footer-text: #fff;
+$footer-text-secondary: #ccc;
+$footer-text-muted: #999;
+$footer-border: #333;
+$footer-hover: #fff;
+$footer-social-bg: rgba(255, 255, 255, 0.1);
+$footer-social-hover: rgba(255, 255, 255, 0.2);
+
+// Миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin transition($property: all) {
+  transition: $property 0.3s ease;
+}
+
+// Стили футера
+.footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  &__section {
+    &:first-child {
+      // Первая секция с контактами может быть шире
+      grid-column: span 1;
+    }
+  }
+
+  &__title {
+    color: $footer-text;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $footer-text-secondary;
+    }
+  }
+
+  &__contacts {
+    @include flex-column;
+    gap: 15px;
+  }
+
+  &__contact-item {
+    @include flex-center;
+    gap: 10px;
+    align-items: flex-start;
+
+    &:hover {
+      .footer__icon {
+        color: $footer-hover;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: $footer-text-secondary;
+    @include transition;
+  }
+
+  &__link {
+    color: $footer-text-secondary;
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+      color: $footer-hover;
+    }
+  }
+
+  &__address {
+    color: $footer-text-secondary;
+    line-height: 1.5;
+    font-style: normal;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include flex-column;
+    gap: 12px;
+
+    li {
+      margin: 0;
+      position: relative;
+
+      &::before {
+        content: '›';
+        position: absolute;
+        left: -15px;
+        color: $footer-text-secondary;
+        @include transition;
+      }
+
+      &:hover {
+        &::before {
+          color: $footer-hover;
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 12px;
+
+    &-link {
+      color: $footer-text-secondary;
+      @include transition;
+      padding: 10px;
+      border-radius: 6px;
+      background: $footer-social-bg;
+      @include flex-center;
+      justify-content: center;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        color: $footer-hover;
+        background: $footer-social-hover;
+        transform: translateY(-2px);
+      }
+
+      // Цвета для разных соцсетей при наведении
+      &:nth-child(1):hover { // Facebook
+        color: #1877f2;
+      }
+
+      &:nth-child(2):hover { // Twitter
+        color: #1da1f2;
+      }
+
+      &:nth-child(3):hover { // Instagram
+        color: #e4405f;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $footer-border;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  &__copyright {
+    color: $footer-text-muted;
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px;
+    margin-top: 40px;
+
+    &__content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    &__section {
+      text-align: center;
+
+      &:first-child {
+        grid-column: span 1;
+      }
+    }
+
+    &__title {
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__contact-item {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__social {
+      justify-content: center;
+    }
+
+    &__links {
+      li {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Дополнительные медиа-запросы
+@media (max-width: 480px) {
+  .footer {
+    &__container {
+      padding: 0 15px;
+    }
+
+    &__content {
+      gap: 25px;
+    }
+
+    &__title {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    &__contacts {
+      gap: 12px;
+    }
+
+    &__social {
+      gap: 8px;
+
+      &-link {
+        padding: 8px;
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
+
+// Темная тема (если нужны вариации)
+.footer--light {
+  background-color: #f8f9fa;
+  color: #333;
+
+  .footer {
+    &__title {
+      color: #333;
+    }
+
+    &__link,
+    &__address,
+    &__icon {
+      color: #666;
+    }
+
+    &__link:hover {
+      color: #000;
+    }
+
+    &__social-link {
+      background: rgba(0, 0, 0, 0.1);
+      color: #666;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.2);
+        color: #333;
+      }
+    }
+
+    &__bottom {
+      border-top-color: #dee2e6;
+    }
+
+    &__copyright {
+      color: #6c757d;
+    }
+  }
+}

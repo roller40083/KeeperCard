@@ -19,14 +19,15 @@
                 width: 100%;
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 
                 /* фиксированный контейнер для главной картинки — предотвращает "прыжки" при смене изображений */
                 height: 360px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: #0b0b0b; /* фон для «поля» изображения (подложка при letterbox) */
+                background: #0b0b0b;
+                /* фон для «поля» изображения (подложка при letterbox) */
                 position: relative;
 
                 img {
@@ -37,7 +38,8 @@
                     max-height: 100%;
                     width: auto;
                     height: auto;
-                    object-fit: contain; /* НЕ обрезает, масштабирует по меньшей стороне */
+                    object-fit: contain;
+                    /* НЕ обрезает, масштабирует по меньшей стороне */
                     object-position: center;
                     transition: transform 0.36s ease, opacity 0.28s ease;
                 }
@@ -75,17 +77,19 @@
 
                 /* тонкий скроллбар */
                 scrollbar-width: thin;
-                scrollbar-color: rgba(255,255,255,0.12) transparent;
+                scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
 
                 &::-webkit-scrollbar {
                     height: 8px;
                 }
+
                 &::-webkit-scrollbar-track {
                     background: transparent;
                     border-radius: 4px;
                 }
+
                 &::-webkit-scrollbar-thumb {
-                    background: rgba(255,255,255,0.12);
+                    background: rgba(255, 255, 255, 0.12);
                     border-radius: 4px;
                 }
             }
@@ -98,12 +102,14 @@
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 120px; /* сузил превью, чтобы больше умещалось */
+                width: 120px;
+                /* сузил превью, чтобы больше умещалось */
                 height: 72px;
-                flex: 0 0 auto; /* важно, чтобы не сжимались при прокрутке */
+                flex: 0 0 auto;
+                /* важно, чтобы не сжимались при прокрутке */
                 border-radius: 8px;
                 overflow: hidden;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
                 transition: transform 0.16s ease, box-shadow 0.16s ease;
             }
 
@@ -128,13 +134,14 @@
                 align-items: center;
                 justify-content: center;
                 font-weight: 700;
-                background: rgba(0,0,0,0.45);
+                background: rgba(0, 0, 0, 0.45);
                 color: #fff;
                 flex: 0 0 auto;
             }
 
             &__hidden {
-                display: none; /* хранит дополнительные фото; используется JS */
+                display: none;
+                /* хранит дополнительные фото; используется JS */
             }
         }
     }
@@ -170,6 +177,14 @@
         margin: 0 0 20px;
     }
 
+    &__buttons-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+        display: flex;
+    }
+
     &__button {
         background-color: rgba(16, 188, 131, 0.992);
         padding: 12px 25px;
@@ -187,9 +202,25 @@
         background-color: rgba(0, 104, 69, 0.992);
     }
 
-    // Блок премуществ 
-    &__advantages {
+    &__button-tg {
+        background-color: #37aee2;
+        padding: 12px 25px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 400;
+        border-radius: 15px;
+        width: fit-content;
+        transition: background-color 0.3s;
     }
+
+    &__button-tg:hover {
+        background-color: #005fa2;
+    }
+
+    // Блок премуществ 
+    &__advantages {}
 
     &__advantages-title {
         margin: 0 0 48px;
@@ -201,8 +232,7 @@
 
     &__advantages-list {}
 
-    &_specs {
-    }
+    &_specs {}
 
     &__specs-title {
         margin: 0 0 48px;
@@ -251,97 +281,97 @@
 
 }
 
- .hero__FAQ {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 480px;
-            padding: 40px;
-        }
-        
-        .hero__FAQ-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-align: left;
-            font-size: 2rem;
-            margin-bottom: 48px;
-            position: relative;
-        }
-        
-        
-        .hero__FAQ-list {            
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .hero__FAQ-item {
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .hero__FAQ-item:last-child {
-            border-bottom: none;
-        }
-        
-        .hero__FAQ-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1.2rem;
-            font-weight: 00;
-            transition: color 0.3s ease;
-        }
-        
-        .hero__FAQ-question::after {
-            content: '▼';
-            font-size: 1rem;
-            color: #ffffff;
-            transition: transform 0.3s ease;
-        }
-        
-        .hero__FAQ-answer {
-            display: block;
-            max-height: 0;
-            opacity: 0;
-            padding: 0;
-            line-height: 1.6;
-            transition: all 0.3s ease;
-        }
-        
-        input[type="checkbox"] {
-            display: none;
-        }
-        
-        input[type="checkbox"]:checked + .hero__FAQ-question {
-            color: rgba(65, 255, 192, 0.992);
-        }
-        
-        input[type="checkbox"]:checked + .hero__FAQ-question::after {
-            content: '▲';
-            transform: rotate(0deg);
-        }
-        
-        input[type="checkbox"]:checked + .hero__FAQ-question + .hero__FAQ-answer {
-            max-height: 200px;
-            opacity: 1;
-            padding: 0 0 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .hero__FAQ {
-                padding: 25px;
-            }
-            
-            .hero__FAQ-title {
-                font-size: 2rem;
-            }
-            
-            .hero__FAQ-question {
-                font-size: 1.1rem;
-                padding: 15px 0;
-            }
-        }
+.hero__FAQ {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+}
+
+.hero__FAQ-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+
+.hero__FAQ-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hero__FAQ-item {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hero__FAQ-item:last-child {
+    border-bottom: none;
+}
+
+.hero__FAQ-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 00;
+    transition: color 0.3s ease;
+}
+
+.hero__FAQ-question::after {
+    content: '▼';
+    font-size: 1rem;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.hero__FAQ-answer {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+.hero__FAQ-question {
+    color: rgba(65, 255, 192, 0.992);
+}
+
+input[type="checkbox"]:checked+.hero__FAQ-question::after {
+    content: '▲';
+    transform: rotate(0deg);
+}
+
+input[type="checkbox"]:checked+.hero__FAQ-question+.hero__FAQ-answer {
+    max-height: 200px;
+    opacity: 1;
+    padding: 0 0 20px 0;
+}
+
+@media (max-width: 768px) {
+    .hero__FAQ {
+        padding: 25px;
+    }
+
+    .hero__FAQ-title {
+        font-size: 2rem;
+    }
+
+    .hero__FAQ-question {
+        font-size: 1.1rem;
+        padding: 15px 0;
+    }
+}
