@@ -29,7 +29,7 @@ body.menu-open {
 }
 
 .container {
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -98,9 +98,15 @@ body.menu-open {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1150px) {
+  .hero__wrapper {
+    flex-direction: column;
+  }
+}
 .hero__img {
   width: 530px;
   height: auto;
+  margin: 0 auto;
 }
 .hero__img .gallery {
   display: flex;
@@ -221,6 +227,7 @@ body.menu-open {
   /* хранит дополнительные фото; используется JS */
 }
 .hero__content {
+  margin: 0 auto;
   width: 530px;
 }
 .hero__order {

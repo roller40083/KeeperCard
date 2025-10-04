@@ -4,11 +4,18 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
-    }
+
+        @media (max-width:1150px) {
+            flex-direction: column;
+        }
+        }
+
+    
 
     &__img {
         width: 530px;
         height: auto;
+        margin: 0 auto;
 
         .gallery {
             display: flex;
@@ -147,7 +154,7 @@
     }
 
     &__content {
-
+        margin: 0 auto;
         width: 530px;
     }
 
