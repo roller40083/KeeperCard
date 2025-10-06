@@ -461,9 +461,9 @@ input[type=checkbox]:checked + .hero__FAQ-question + .hero__FAQ-answer {
   padding: 0 20px;
 }
 .footer__content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
   margin-bottom: 30px;
 }
 .footer__section:first-child {
@@ -522,7 +522,7 @@ input[type=checkbox]:checked + .hero__FAQ-question + .hero__FAQ-answer {
 .footer__links {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 15px;
   display: flex;
   flex-direction: column;
   gap: 12px;
