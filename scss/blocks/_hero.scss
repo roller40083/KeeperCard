@@ -13,7 +13,6 @@
     
 
     &__img {
-        width: 530px;
         height: auto;
         margin: 0 auto;
 
@@ -21,6 +20,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            max-width: 90vw;
 
             &__main {
                 width: 100%;
@@ -33,7 +33,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: #0b0b0b;
                 /* фон для «поля» изображения (подложка при letterbox) */
                 position: relative;
 
@@ -155,7 +154,7 @@
 
     &__content {
         margin: 0 auto;
-        width: 530px;
+        max-width: 530px;
     }
 
     &__order {
@@ -190,11 +189,12 @@
         margin: 0;
         gap: 10px;
         display: flex;
+        flex-wrap: wrap;
     }
 
     &__button {
         background-color: rgba(16, 188, 131, 0.992);
-        padding: 12px 25px;
+        padding: 12px 17px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -209,20 +209,11 @@
         background-color: rgba(0, 104, 69, 0.992);
     }
 
-    &__button-tg {
+    &__button--tg {
         background-color: #37aee2;
-        padding: 12px 25px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-weight: 400;
-        border-radius: 15px;
-        width: fit-content;
-        transition: background-color 0.3s;
     }
 
-    &__button-tg:hover {
+    &__button--tg:hover {
         background-color: #005fa2;
     }
 
@@ -282,17 +273,12 @@
         color: rgb(176, 176, 181);
         margin: 0;
     }
-
-
-
-
 }
 
 .hero__FAQ {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 100%;
     max-width: 480px;
     padding: 40px;
 }

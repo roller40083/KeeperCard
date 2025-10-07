@@ -104,7 +104,6 @@ body.menu-open {
   }
 }
 .hero__img {
-  width: 530px;
   height: auto;
   margin: 0 auto;
 }
@@ -112,6 +111,7 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-width: 90vw;
   /* адаптив: уменьшение высоты на узких экранах */
   /* последняя "ещё" кнопка */
 }
@@ -125,7 +125,6 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0b0b0b;
   /* фон для «поля» изображения (подложка при letterbox) */
   position: relative;
   /* класс для анимации при смене фото */
@@ -228,7 +227,7 @@ body.menu-open {
 }
 .hero__content {
   margin: 0 auto;
-  width: 530px;
+  max-width: 530px;
 }
 .hero__order {
   display: flex;
@@ -258,10 +257,11 @@ body.menu-open {
   margin: 0;
   gap: 10px;
   display: flex;
+  flex-wrap: wrap;
 }
 .hero__button {
   background-color: rgba(16, 188, 131, 0.992);
-  padding: 12px 25px;
+  padding: 12px 17px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -275,20 +275,10 @@ body.menu-open {
 .hero__button:hover {
   background-color: rgba(0, 104, 69, 0.992);
 }
-.hero__button-tg {
+.hero__button--tg {
   background-color: #37aee2;
-  padding: 12px 25px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-weight: 400;
-  border-radius: 15px;
-  width: -moz-fit-content;
-  width: fit-content;
-  transition: background-color 0.3s;
 }
-.hero__button-tg:hover {
+.hero__button--tg:hover {
   background-color: #005fa2;
 }
 .hero__advantages-title {
@@ -339,7 +329,6 @@ body.menu-open {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 100%;
   max-width: 480px;
   padding: 40px;
 }
