@@ -41,12 +41,20 @@ $footer-social-hover: rgba(255, 255, 255, 0.2);
     justify-content: center;
     gap: 50px;
     margin-bottom: 30px;
+
+    @media (max-width: 628px) {}
   }
 
   &__section {
     &:first-child {
       // Первая секция с контактами может быть шире
       grid-column: span 1;
+    }
+
+    &--info {
+      @media (max-width: 628px) {
+        display: none;
+      }
     }
   }
 
@@ -162,15 +170,18 @@ $footer-social-hover: rgba(255, 255, 255, 0.2);
       }
 
       // Цвета для разных соцсетей при наведении
-      &:nth-child(1):hover { // Facebook
+      &:nth-child(1):hover {
+        // Facebook
         color: #1877f2;
       }
 
-      &:nth-child(2):hover { // Twitter
+      &:nth-child(2):hover {
+        // Twitter
         color: #1da1f2;
       }
 
-      &:nth-child(3):hover { // Instagram
+      &:nth-child(3):hover {
+        // Instagram
         color: #e4405f;
       }
     }
@@ -186,125 +197,5 @@ $footer-social-hover: rgba(255, 255, 255, 0.2);
     color: $footer-text-muted;
     margin: 0;
     font-size: 14px;
-  }
-}
-
-// Адаптивность
-@media (max-width: 768px) {
-  .footer {
-    padding: 30px 0 15px;
-    margin-top: 40px;
-
-    &__content {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    &__section {
-      text-align: center;
-
-      &:first-child {
-        grid-column: span 1;
-      }
-    }
-
-    &__title {
-      &::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-
-    &__contact-item {
-      justify-content: center;
-      text-align: center;
-    }
-
-    &__social {
-      justify-content: center;
-    }
-
-    &__links {
-      li {
-        &::before {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-// Дополнительные медиа-запросы
-@media (max-width: 480px) {
-  .footer {
-    &__container {
-      padding: 0 15px;
-    }
-
-    &__content {
-      gap: 25px;
-    }
-
-    &__title {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    &__contacts {
-      gap: 12px;
-    }
-
-    &__social {
-      gap: 8px;
-
-      &-link {
-        padding: 8px;
-
-        svg {
-          width: 18px;
-          height: 18px;
-        }
-      }
-    }
-  }
-}
-
-// Темная тема (если нужны вариации)
-.footer--light {
-  background-color: #f8f9fa;
-  color: #333;
-
-  .footer {
-    &__title {
-      color: #333;
-    }
-
-    &__link,
-    &__address,
-    &__icon {
-      color: #666;
-    }
-
-    &__link:hover {
-      color: #000;
-    }
-
-    &__social-link {
-      background: rgba(0, 0, 0, 0.1);
-      color: #666;
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.2);
-        color: #333;
-      }
-    }
-
-    &__bottom {
-      border-top-color: #dee2e6;
-    }
-
-    &__copyright {
-      color: #6c757d;
-    }
   }
 }
