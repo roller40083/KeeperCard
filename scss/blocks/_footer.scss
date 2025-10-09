@@ -42,7 +42,9 @@ $footer-social-hover: rgba(255, 255, 255, 0.2);
     gap: 50px;
     margin-bottom: 30px;
 
-    @media (max-width: 628px) {}
+    @media (max-width: 628px) {
+      flex-direction: column;;
+    }
   }
 
   &__section {
@@ -53,7 +55,7 @@ $footer-social-hover: rgba(255, 255, 255, 0.2);
 
     &--info {
       @media (max-width: 628px) {
-        display: none;
+      
       }
     }
   }

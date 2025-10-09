@@ -455,13 +455,13 @@ input[type=checkbox]:checked + .hero__FAQ-question + .hero__FAQ-answer {
   gap: 50px;
   margin-bottom: 30px;
 }
+@media (max-width: 628px) {
+  .footer__content {
+    flex-direction: column;
+  }
+}
 .footer__section:first-child {
   grid-column: span 1;
-}
-@media (max-width: 628px) {
-  .footer__section--info {
-    display: none;
-  }
 }
 .footer__title {
   color: #fff;
