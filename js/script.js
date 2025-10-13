@@ -61,4 +61,74 @@ document.addEventListener('DOMContentLoaded', function () {
             changeMain(src);
         });
     }
+
+    // LIGHTBOX -------------------------------------------------------
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    // собираем список всех изображений: превью + скрытые; если main не в списке — добавляем
+    const galleryImages = [];
+    document.querySelectorAll('.gallery__thumb').forEach(t => { if (t.dataset && t.dataset.src) galleryImages.push(t.dataset.src); });
+    document.querySelectorAll('.gallery__hidden img').forEach(i => galleryImages.push(i.src));
+    if (mainImg && mainImg.src && !galleryImages.includes(mainImg.src)) galleryImages.unshift(mainImg.src);
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        if (!lightbox || !lightboxImg) return;
+        currentIndex = Math.max(0, Math.min(galleryImages.length - 1, index || 0));
+        // плавная смена
+        lightboxImg.style.opacity = '0';
+        setTimeout(() => {
+            lightboxImg.src = galleryImages[currentIndex] || '';
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('menu-open');
+            setTimeout(() => lightboxImg.style.opacity = '1', 50);
+        }, 160);
+    }
+
+    function closeLightbox() {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.style.opacity = '0';
+        setTimeout(() => { lightboxImg.src = ''; }, 240);
+        document.body.classList.remove('menu-open');
+    }
+
+    function showNext() { openLightbox((currentIndex + 1) % galleryImages.length); }
+    function showPrev() { openLightbox((currentIndex - 1 + galleryImages.length) % galleryImages.length); }
+
+    // открыть по клику на большое изображение
+    if (mainImg) {
+        mainImg.style.cursor = 'zoom-in';
+        mainImg.addEventListener('click', () => {
+            const idx = galleryImages.indexOf(mainImg.src);
+            openLightbox(idx === -1 ? 0 : idx);
+        });
+    }
+
+    // открыть по клику на миниатюре (один клик)
+    document.querySelectorAll('.gallery__thumb').forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+            const src = thumb.dataset.src;
+            const indexInList = galleryImages.indexOf(src);
+            if (indexInList !== -1) openLightbox(indexInList);
+        });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener('click', showNext);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox || lightbox.getAttribute('aria-hidden') === 'true') return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
+
+    if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 });

@@ -241,6 +241,19 @@
             </div>
         </section>
     </main>
+
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть"></button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Предыдущее">‹</button>
+
+        <div class="lightbox__content" role="dialog" aria-modal="true">
+            <img id="lightboxImg" src="" alt="Просмотр изображения">
+        </div>
+
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Следующее">›</button>
+    </div>
+
 </body>
 <footer class="footer">
     <div class="footer__container">
