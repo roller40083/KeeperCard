@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KeeperCard - современное решение для управления картами">
+    <meta name="keywords" content="карты, управление, keeper, digital">
+    <title>KeeperCard</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <a href="#"><img class="header__logo" src="images/logo.png" width="70" height="70" alt="logo"></a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Продукт</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Заказ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__wrapper">
+                    <div class="hero__img">
+                        <div class="gallery">
+                            <div class="gallery__main">
+                                <img src="images/20241130_191310.jpg" alt="KeeperCard main" id="galleryMain">
+                            </div>
+
+                            <div class="gallery__thumbs" aria-label="gallery thumbnails">
+                                <button class="gallery__thumb" type="button"
+                                    data-src="images/photo_2025-08-21_12-38-49 (2).jpg">
+                                    <img src="images/photo_2025-08-21_12-38-49 (2).jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button"
+                                    data-src="images/photo_2025-08-21_12-38-49.jpg">
+                                    <img src="images/photo_2025-08-21_12-38-49.jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button"
+                                    data-src="images/photo_2025-08-21_12-38-50 (2).jpg">
+                                    <img src="images/photo_2025-08-21_12-38-50 (2).jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button"
+                                    data-src="images/photo_2025-08-21_12-38-50.jpg">
+                                    <img src="images/photo_2025-08-21_12-38-50.jpg" alt="">
+                                </button>
+                                <button class="gallery__thumb" type="button"
+                                    data-src="images/photo_2025-08-21_12-38-50.jpg">
+                                    <img src="images/photo_2025-08-21_12-38-50.jpg" alt="">
+                                </button>
+
+                            </div>
+
+                            <!-- скрытые фото для «выдвижки» — добавьте свои изображения сюда -->
+                            <div class="gallery__hidden" aria-hidden="true">
+                                <img src="images/photo4.jpg" alt="">
+                                <img src="images/photo5.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__content">
+                        <div class="hero__order">
+                            <h1 class="hero__title">KeeperCard</h1>
+                            <p class="hero__text">Карманный нож‑«кредитка». Тонкий. Лёгкий. Всегда под рукой.</p>
+                            <span class="hero__price">9 490 ₽</span>
+                            <ul class="hero__buttons-list">
+                                <li class="hero__button-item">
+                                    <a href="https://keeperbelt.ru/catalog/novinki/nozh_keepercard/"
+                                        class="hero__button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-shopping-cart mr-2 h-5 w-5">
+                                            <circle cx="8" cy="21" r="1"></circle>
+                                            <circle cx="19" cy="21" r="1"></circle>
+                                            <path
+                                                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                            </path>
+                                        </svg>
+                                        Купить сейчас
+                                    </a>
+                                </li>
+                                <li class="hero__button-item">
+                                    <a href="tel: +7(960)0080001" class="hero__button">
+                                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.768">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M16.1007 13.359L15.5719 12.8272H15.5719L16.1007 13.359ZM16.5562 12.9062L17.085 13.438H17.085L16.5562 12.9062ZM18.9728 12.5894L18.6146 13.2483L18.9728 12.5894ZM20.8833 13.628L20.5251 14.2869L20.8833 13.628ZM21.4217 16.883L21.9505 17.4148L21.4217 16.883ZM20.0011 18.2954L19.4723 17.7636L20.0011 18.2954ZM18.6763 18.9651L18.7459 19.7119H18.7459L18.6763 18.9651ZM8.81536 14.7266L9.34418 14.1947L8.81536 14.7266ZM4.00289 5.74561L3.2541 5.78816L3.2541 5.78816L4.00289 5.74561ZM10.4775 7.19738L11.0063 7.72922H11.0063L10.4775 7.19738ZM10.6342 4.54348L11.2346 4.09401L10.6342 4.54348ZM9.37326 2.85908L8.77286 3.30855V3.30855L9.37326 2.85908ZM6.26145 2.57483L6.79027 3.10667H6.79027L6.26145 2.57483ZM4.69185 4.13552L4.16303 3.60368H4.16303L4.69185 4.13552ZM12.0631 11.4972L12.5919 10.9654L12.0631 11.4972ZM16.6295 13.8909L17.085 13.438L16.0273 12.3743L15.5719 12.8272L16.6295 13.8909ZM18.6146 13.2483L20.5251 14.2869L21.2415 12.9691L19.331 11.9305L18.6146 13.2483ZM20.8929 16.3511L19.4723 17.7636L20.5299 18.8273L21.9505 17.4148L20.8929 16.3511ZM18.6067 18.2184C17.1568 18.3535 13.4056 18.2331 9.34418 14.1947L8.28654 15.2584C12.7186 19.6653 16.9369 19.8805 18.7459 19.7119L18.6067 18.2184ZM9.34418 14.1947C5.4728 10.3453 4.83151 7.10765 4.75168 5.70305L3.2541 5.78816C3.35456 7.55599 4.14863 11.144 8.28654 15.2584L9.34418 14.1947ZM10.7195 8.01441L11.0063 7.72922L9.9487 6.66555L9.66189 6.95073L10.7195 8.01441ZM11.2346 4.09401L9.97365 2.40961L8.77286 3.30855L10.0338 4.99296L11.2346 4.09401ZM5.73263 2.04299L4.16303 3.60368L5.22067 4.66736L6.79027 3.10667L5.73263 2.04299ZM10.1907 7.48257C9.66189 6.95073 9.66117 6.95144 9.66045 6.95216C9.66021 6.9524 9.65949 6.95313 9.659 6.95362C9.65802 6.95461 9.65702 6.95561 9.65601 6.95664C9.65398 6.95871 9.65188 6.96086 9.64972 6.9631C9.64539 6.96759 9.64081 6.97245 9.63599 6.97769C9.62634 6.98816 9.61575 7.00014 9.60441 7.01367C9.58174 7.04072 9.55605 7.07403 9.52905 7.11388C9.47492 7.19377 9.41594 7.2994 9.36589 7.43224C9.26376 7.70329 9.20901 8.0606 9.27765 8.50305C9.41189 9.36833 10.0078 10.5113 11.5343 12.0291L12.5919 10.9654C11.1634 9.54499 10.8231 8.68059 10.7599 8.27309C10.7298 8.07916 10.761 7.98371 10.7696 7.96111C10.7748 7.94713 10.7773 7.9457 10.7709 7.95525C10.7677 7.95992 10.7624 7.96723 10.7541 7.97708C10.75 7.98201 10.7451 7.98759 10.7394 7.99381C10.7365 7.99692 10.7335 8.00019 10.7301 8.00362C10.7285 8.00534 10.7268 8.00709 10.725 8.00889C10.7241 8.00979 10.7232 8.0107 10.7223 8.01162C10.7219 8.01208 10.7212 8.01278 10.7209 8.01301C10.7202 8.01371 10.7195 8.01441 10.1907 7.48257ZM11.5343 12.0291C13.0613 13.5474 14.2096 14.1383 15.0763 14.2713C15.5192 14.3392 15.8763 14.285 16.1472 14.1841C16.28 14.1346 16.3858 14.0763 16.4658 14.0227C16.5058 13.9959 16.5392 13.9704 16.5663 13.9479C16.5799 13.9367 16.5919 13.9262 16.6024 13.9166C16.6077 13.9118 16.6126 13.9073 16.6171 13.903C16.6194 13.9008 16.6215 13.8987 16.6236 13.8967C16.6246 13.8957 16.6256 13.8947 16.6266 13.8937C16.6271 13.8932 16.6279 13.8925 16.6281 13.8923C16.6288 13.8916 16.6295 13.8909 16.1007 13.359C15.5719 12.8272 15.5726 12.8265 15.5733 12.8258C15.5735 12.8256 15.5742 12.8249 15.5747 12.8244C15.5756 12.8235 15.5765 12.8226 15.5774 12.8217C15.5793 12.82 15.581 12.8183 15.5827 12.8166C15.5862 12.8133 15.5895 12.8103 15.5926 12.8074C15.5988 12.8018 15.6044 12.7969 15.6094 12.7929C15.6192 12.7847 15.6265 12.7795 15.631 12.7764C15.6403 12.7702 15.6384 12.773 15.6236 12.7785C15.5991 12.7876 15.501 12.8189 15.3038 12.7886C14.8905 12.7253 14.02 12.3853 12.5919 10.9654L11.5343 12.0291ZM9.97365 2.40961C8.95434 1.04802 6.94996 0.83257 5.73263 2.04299L6.79027 3.10667C7.32195 2.578 8.26623 2.63181 8.77286 3.30855L9.97365 2.40961ZM4.75168 5.70305C4.73201 5.35694 4.89075 4.9954 5.22067 4.66736L4.16303 3.60368C3.62571 4.13795 3.20329 4.89425 3.2541 5.78816L4.75168 5.70305ZM19.4723 17.7636C19.1975 18.0369 18.9029 18.1908 18.6067 18.2184L18.7459 19.7119C19.4805 19.6434 20.0824 19.2723 20.5299 18.8273L19.4723 17.7636ZM11.0063 7.72922C11.9908 6.7503 12.064 5.2019 11.2346 4.09401L10.0338 4.99295C10.4373 5.53193 10.3773 6.23938 9.9487 6.66555L11.0063 7.72922ZM20.5251 14.2869C21.3429 14.7315 21.4703 15.7769 20.8929 16.3511L21.9505 17.4148C23.2908 16.0821 22.8775 13.8584 21.2415 12.9691L20.5251 14.2869ZM17.085 13.438C17.469 13.0562 18.0871 12.9616 18.6146 13.2483L19.331 11.9305C18.2474 11.3414 16.9026 11.5041 16.0273 12.3743L17.085 13.438Z"
+                                                    fill="#ffffff"></path>
+                                            </g>
+                                        </svg>
+                                        Позвонить нам
+                                    </a>
+                                </li>
+                                <li class="hero__button-item">
+                                    <a class="hero__button hero__button--tg"
+                                        href="https://t.me/Kotel74?text=Здравствуйте, хотел бы обсудить покупку ножа!"
+                                        target="_blank">
+                                        <svg height="25px" width="25px" version="1.1" id="Layer_1"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" fill="#ffffff"
+                                            stroke="#ffffff">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke="#fdfcfc" stroke-width="35.839929999999995">
+                                                <path style="fill:#C3C3C7;"
+                                                    d="M165.323,267.452L395.89,125.446c4.144-2.545,8.407,3.058,4.849,6.359L210.454,308.684 c-6.688,6.226-11.003,14.558-12.225,23.602l-6.482,48.036c-0.858,6.414-9.868,7.05-11.638,0.843l-24.929-87.595 C152.325,283.578,156.486,272.907,165.323,267.452z">
+                                                </path>
+                                                <path style="fill:#DEDEE0;"
+                                                    d="M9.043,246.86l117.975,44.032l45.664,146.854c2.922,9.405,14.423,12.882,22.057,6.641l65.761-53.61 c6.893-5.617,16.712-5.897,23.916-0.667l118.61,86.113c8.166,5.936,19.736,1.461,21.784-8.407l86.888-417.947 c2.236-10.779-8.356-19.772-18.62-15.802L8.905,220.845C-3.043,225.453-2.939,242.369,9.043,246.86z M165.323,267.452 L395.89,125.446c4.144-2.545,8.407,3.058,4.849,6.359L210.454,308.684c-6.688,6.226-11.003,14.558-12.225,23.602l-6.482,48.036 c-0.858,6.414-9.868,7.05-11.638,0.843l-24.929-87.595C152.325,283.578,156.486,272.907,165.323,267.452z">
+                                                </path>
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path style="fill:#C3C3C7;"
+                                                    d="M165.323,267.452L395.89,125.446c4.144-2.545,8.407,3.058,4.849,6.359L210.454,308.684 c-6.688,6.226-11.003,14.558-12.225,23.602l-6.482,48.036c-0.858,6.414-9.868,7.05-11.638,0.843l-24.929-87.595 C152.325,283.578,156.486,272.907,165.323,267.452z">
+                                                </path>
+                                                <path style="fill:#DEDEE0;"
+                                                    d="M9.043,246.86l117.975,44.032l45.664,146.854c2.922,9.405,14.423,12.882,22.057,6.641l65.761-53.61 c6.893-5.617,16.712-5.897,23.916-0.667l118.61,86.113c8.166,5.936,19.736,1.461,21.784-8.407l86.888-417.947 c2.236-10.779-8.356-19.772-18.62-15.802L8.905,220.845C-3.043,225.453-2.939,242.369,9.043,246.86z M165.323,267.452 L395.89,125.446c4.144-2.545,8.407,3.058,4.849,6.359L210.454,308.684c-6.688,6.226-11.003,14.558-12.225,23.602l-6.482,48.036 c-0.858,6.414-9.868,7.05-11.638,0.843l-24.929-87.595C152.325,283.578,156.486,272.907,165.323,267.452z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                        Написать нам
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="hero__advantages section__block">
+                            <h2 class="hero__advantages-title section__title">
+                                <svg class="hero__advantages-icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-sparkles h-5 w-5 text-accent">
+                                    <path
+                                        d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                    </path>
+                                    <path d="M20 3v4"></path>
+                                    <path d="M22 5h-4"></path>
+                                    <path d="M4 17v2"></path>
+                                    <path d="M5 18H3"></path>
+                                </svg>
+                                Премущества
+                            </h2>
+
+                            <ul class="hero__advantages-list section__list">
+                                <li class="hero__advantages-item">Формат кредитной карты — помещается в кошелёк</li>
+                                <li class="hero__advantages-item">Лёгкий и прочный</li>
+                                <li class="hero__advantages-item">Уникальный дизайн</li>
+                            </ul>
+                        </div>
+                        <div class="hero__specs section__block">
+                            <h2 class="hero__specs-title section__title">
+                                <svg class="hero__specs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-shield-check h-5 w-5 text-primary">
+                                    <path
+                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                    </path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                Характеристики
+                            </h2>
+
+                            <ul class="hero__specs-list">
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Материал</h3>
+                                    <span class="hero__specs-value">Нержавеющая сталь, ABS</span>
+                                </li>
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Вес</h3>
+                                    <span class="hero__specs-value">28 г</span>
+                                </li>
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Размеры</h3>
+                                    <span class="hero__specs-value">85.6 × 54 × 2.2 мм</span>
+                                </li>
+                                <li class="hero__specs-item">
+                                    <h3 class="hero__specs-term">Блокировка</h3>
+                                    <span class="hero__specs-value">Фиксатор лезвия (liner-lock)</span>
+                                </li>
+                            </ul>
+                            <p class="hero__specs-text">Гарантия 12 месяцев. Поддержка — ответ в течение 24 часов.</p>
+                        </div>
+
+                        <div class="hero__FAQ section__block">
+                            <h2 class="hero__FAQ-title hero__title">
+                                <img src="images/question-circle-svgrepo-com.svg" width="27" height="27" alt="">
+                                FAQ
+                            </h2>
+                            <ul class="hero__FAQ-list">
+                                <li class="hero__FAQ-item">
+                                    <input type="checkbox" id="question1">
+                                    <label for="question1" class="hero__FAQ-question">
+                                        Легально ли носить KeeperCard?
+                                    </label>
+                                    <span class="hero__FAQ-answer">
+                                        Пожалуйста, ознакомьтесь с местными законами. KeeperCard предназначен для
+                                        бытовых
+                                        задач.
+                                    </span>
+                                </li>
+                                <li class="hero__FAQ-item">
+                                    <input type="checkbox" id="question2">
+                                    <label for="question2" class="hero__FAQ-question">
+                                        Можно ли заточить лезвие?
+                                    </label>
+                                    <span class="hero__FAQ-answer">
+                                        Да, подойдёт стандартная точилка для ножей.
+                                    </span>
+                                </li>
+                                <li class="hero__FAQ-item">
+                                    <input type="checkbox" id="question3">
+                                    <label for="question3" class="hero__FAQ-question">
+                                        Как ухаживать?
+                                    </label>
+                                    <span class="hero__FAQ-answer">
+                                        После использования протирайте насухо. Не храните во влажной среде.
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть"></button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Предыдущее">‹</button>
+
+        <div class="lightbox__content" role="dialog" aria-modal="true">
+            <img id="lightboxImg" src="" alt="Просмотр изображения">
+        </div>
+
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Следующее">›</button>
+    </div>
+
+</body>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__content">
+            <div class="footer__section footer__section--contacts">
+                <h3 class="footer__title">Контакты</h3>
+                <div class="footer__contacts">
+                    <div class="footer__contact-item">
+                        <svg class="footer__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <a href="mailto:keeperbelt@mail.ru" class="footer__link">keeperbelt@mail.ru</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <svg class="footer__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20 15.5c-1.2 0-2.5-.2-3.6-.6h-.3c-.3 0-.5.1-.7.3l-2.2 2.2c-2.8-1.5-5.2-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1.1-.3-1.1-.5-2.4-.5-3.6 0-.5-.5-1-1-1H4c-.5 0-1 .5-1 1 0 9.4 7.6 17 17 17 .5 0 1-.5 1-1v-3.5c0-.5-.5-1-1-1z" />
+                        </svg>
+                        <a href="tel:+79600080001" class="footer__link">+7 (960) 008-00-01</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <svg class="footer__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <span class="footer__address">
+                            308504, Белгородская область, с. Таврово,<br>
+                            мкр. Таврово-3, ул. Южная, д. 17
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__section footer__section--info">
+                <h3 class="footer__title">Информация</h3>
+                <ul class="footer__links">
+                    <li><a class="footer__link" href="https://keeperbelt.ru/company/" target="_blank">О компании</a>
+                    </li>
+                    <li><a class="footer__link" href="https://keeperbelt.ru/payment-delivery/" target="_blank">Доставка
+                            и оплата</a></li>
+                    <li><a class="footer__link" href="https://keeperbelt.ru/conditions-return/" target="_blank">Условия
+                            возврата</a></li>
+                    <li><a class="footer__link" href="https://keeperbelt.ru/contacts/" target="_blank">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">
+                &copy; 2025 KeeperBelt. Все права защищены.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="./js/script.js"></script>
+
+</html>

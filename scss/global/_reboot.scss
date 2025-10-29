@@ -1,0 +1,23 @@
+// Общие стили для ссылок
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+body {  
+    margin: 0; 
+    height: 100vh;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding-top: 110px; // Отступ для фиксированного header
+    
+    &.menu-open {
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,370 @@
+.hero {
+    margin-top: 32px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:1150px) {
+            flex-direction: column;
+        }
+    }
+
+
+
+    &__img {
+        height: auto;
+        margin: 0 auto;
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 90vw;
+
+            &__main {
+                width: 100%;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+                /* фиксированный контейнер для главной картинки — предотвращает "прыжки" при смене изображений */
+                height: 360px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* фон для «поля» изображения (подложка при letterbox) */
+                position: relative;
+
+                img {
+                    /* чтобы фото не обрезалось — подстраиваем размеры в пределах контейнера */
+                    border-radius: 15px;
+                    display: block;
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: auto;
+                    height: auto;
+                    object-fit: contain;
+                    /* НЕ обрезает, масштабирует по меньшей стороне */
+                    object-position: center;
+                    transition: transform 0.36s ease, opacity 0.28s ease;
+                }
+
+                /* класс для анимации при смене фото */
+                &.is-changing img {
+                    transform: scale(1.03);
+                    opacity: 0.6;
+                }
+            }
+
+            /* адаптив: уменьшение высоты на узких экранах */
+            @media (max-width: 768px) {
+                &__main {
+                    height: 260px;
+                }
+            }
+
+            @media (max-width: 420px) {
+                &__main {
+                    height: 200px;
+                }
+            }
+
+            &__thumbs {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                flex-wrap: nowrap;
+
+                /* горизонтальная прокрутка для превью, часть мини-картинок уходит за границу */
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 6px;
+
+                /* тонкий скроллбар */
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+
+                &::-webkit-scrollbar {
+                    height: 8px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                    border-radius: 4px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.12);
+                    border-radius: 4px;
+                }
+            }
+
+            &__thumb {
+                background: transparent;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 120px;
+                /* сузил превью, чтобы больше умещалось */
+                height: 72px;
+                flex: 0 0 auto;
+                /* важно, чтобы не сжимались при прокрутке */
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+                transition: transform 0.16s ease, box-shadow 0.16s ease;
+            }
+
+            &__thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            &__thumb:active,
+            &__thumb:focus,
+            &__thumb:hover {
+                transform: translateY(-3px);
+            }
+
+            /* последняя "ещё" кнопка */
+            &__thumb--more {
+                width: 64px;
+                height: 40px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                background: rgba(0, 0, 0, 0.45);
+                color: #fff;
+                flex: 0 0 auto;
+            }
+
+            &__hidden {
+                display: none;
+                /* хранит дополнительные фото; используется JS */
+            }
+        }
+    }
+
+    &__content {
+        margin: 0 auto;
+        max-width: 530px;
+    }
+
+    &__order {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 32px;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    &__text {
+        margin: 0 0 20px;
+        font-size: 18px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.705);
+    }
+
+    &__price {
+        font-size: 24px;
+        font-weight: 900;
+        color: white;
+        margin: 0 0 20px;
+    }
+
+    &__buttons-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__button {
+        background-color: rgba(16, 188, 131, 0.992);
+        padding: 12px 17px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 400;
+        border-radius: 15px;
+        width: fit-content;
+        transition: background-color 0.3s;
+    }
+
+    &__button:hover {
+        background-color: rgba(0, 104, 69, 0.992);
+    }
+
+    &__button--tg {
+        background-color: #37aee2;
+    }
+
+    &__button--tg:hover {
+        background-color: #005fa2;
+    }
+
+    // Блок премуществ 
+    &__advantages {}
+
+    &__advantages-title {
+        margin: 0 0 48px;
+    }
+
+    &__advantages-icon {
+        color: rgb(255, 193, 5);
+    }
+
+    &__advantages-list {}
+
+    &_specs {}
+
+    &__specs-title {
+        margin: 0 0 48px;
+    }
+
+    &__specs-icon {
+        color: rgb(16, 188, 131);
+    }
+
+    &__specs-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 16px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 48px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // в одну колонку на мобильных
+            grid-template-rows: auto;
+        }
+    }
+
+    &__specs-term {
+        margin: 0;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 300;
+        color: rgb(176, 176, 181);
+    }
+
+    &__specs-value {
+        font-weight: 500;
+    }
+
+    &__specs-text {
+        font-size: 18px;
+        line-height: 24px;
+        color: rgb(176, 176, 181);
+        margin: 0;
+    }
+}
+
+.hero__FAQ {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 480px;
+    padding: 40px;
+}
+
+.hero__FAQ-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+
+.hero__FAQ-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hero__FAQ-item {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hero__FAQ-item:last-child {
+    border-bottom: none;
+}
+
+.hero__FAQ-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 00;
+    transition: color 0.3s ease;
+}
+
+.hero__FAQ-question::after {
+    content: '▼';
+    font-size: 1rem;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.hero__FAQ-answer {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+.hero__FAQ-question {
+    color: rgba(65, 255, 192, 0.992);
+}
+
+input[type="checkbox"]:checked+.hero__FAQ-question::after {
+    content: '▲';
+    transform: rotate(0deg);
+}
+
+input[type="checkbox"]:checked+.hero__FAQ-question+.hero__FAQ-answer {
+    max-height: 200px;
+    opacity: 1;
+    padding: 0 0 20px 0;
+}
+
+@media (max-width: 768px) {
+    .hero__FAQ {
+        padding: 25px;
+    }
+
+    .hero__FAQ-title {
+        font-size: 2rem;
+    }
+
+    .hero__FAQ-question {
+        font-size: 1.1rem;
+        padding: 15px 0;
+    }
+}

@@ -1,0 +1,71 @@
+.header {
+    border: 0.5px solid rgba(255, 255, 255, 0.178);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+    }
+
+    &__logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    &__nav {
+        &-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 32px;
+        }
+
+      
+
+        &-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            
+            // Анимация при наведении
+            &:hover {
+                color: #f0f0f0;
+                transform: translateY(-2px);
+            }
+            
+            // Подчеркивание снизу при наведении
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: white;
+                transition: width 0.3s ease;
+            }
+            
+            &:hover::after {
+                width: 100%;
+            }
+            
+            // Анимация при клике
+            &:active {
+                transform: translateY(0);
+                color: #ccc;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.section {
+
+    &__block {
+        background-color: rgb(24, 24, 27);
+        border: 1px solid rgb(44, 44, 48);
+        padding: 24px;
+        border-radius: 12px;
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+        font-size: $font-size-3xl;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 0;
+        padding: 0 0 0 20px;
+        font-size: $font-size-lg;        
+    }
+}
