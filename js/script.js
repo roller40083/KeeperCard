@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // открыть по клику на миниатюре (один клик)
     
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxNext) lightboxNext.addEventListener('click', showNext);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
 
     document.addEventListener('keydown', (e) => {
         if (!lightbox || lightbox.getAttribute('aria-hidden') === 'true') return;
