@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Nixie+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:700,900");
 @keyframes fadeIn {
@@ -52,8 +53,35 @@ body.menu-open {
   padding: 16px 0;
 }
 .header__logo {
-  width: 70px;
-  height: 70px;
+  border-top: 2px solid white;
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 30px;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.header__logo:hover {
+  transform: translateY(-5px);
+  border-top-color: transparent;
+}
+.header__logo::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.header__logo:hover::before {
+  opacity: 0;
 }
 .header__nav-list {
   display: flex;
@@ -403,18 +431,85 @@ input[type=checkbox]:checked + .hero__FAQ-question + .hero__FAQ-answer {
   padding: 0 0 20px 0;
 }
 
-@media (max-width: 768px) {
-  .hero__FAQ {
-    padding: 25px;
-  }
-  .hero__FAQ-title {
-    font-size: 2rem;
-  }
-  .hero__FAQ-question {
-    font-size: 1.1rem;
-    padding: 15px 0;
-  }
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+.lightbox[aria-hidden=false] {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox__content {
+  max-width: 90%;
+  max-height: 90vh;
+  position: relative;
+}
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  z-index: 1001;
+}
+.lightbox__close::before, .lightbox__close::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background-color: white;
+  top: 5px;
+  left: 19px;
+}
+.lightbox__close::before {
+  transform: rotate(45deg);
+}
+.lightbox__close::after {
+  transform: rotate(-45deg);
+}
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 60px;
+  cursor: pointer;
+  padding: 20px;
+  z-index: 1001;
+}
+.lightbox__nav--prev {
+  left: 20px;
+}
+.lightbox__nav--next {
+  right: 20px;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 .section__block {
   background-color: rgb(24, 24, 27);
   border: 1px solid rgb(44, 44, 48);
