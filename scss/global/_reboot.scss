@@ -12,14 +12,15 @@ a.no-underline {
     text-decoration: none;
 }
 
-body {  
-    margin: 0; 
+body {
+    margin: 0;
     height: 100vh;
     font-family: "Source Sans 3", sans-serif;
     font-weight: 100;
     color: rgb(255, 255, 255);
     background-color: black;
     padding-top: 100px;
+
     &.menu-open {
         overflow: hidden;
     }
