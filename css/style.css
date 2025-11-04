@@ -2,11 +2,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Nixie+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:700,900");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap");
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -23,7 +29,7 @@ body {
   font-weight: 100;
   color: rgb(255, 255, 255);
   background-color: black;
-  padding-top: 110px;
+  padding-top: 100px;
 }
 body.menu-open {
   overflow: hidden;
@@ -36,6 +42,7 @@ body.menu-open {
 }
 
 .header {
+  font-family: "Jura", sans-serif;
   border: 0.5px solid rgba(255, 255, 255, 0.178);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -288,19 +295,25 @@ body.menu-open {
   flex-wrap: wrap;
 }
 .hero__button {
-  background-color: rgba(16, 188, 131, 0.992);
+  background-color: rgb(255, 86, 86);
   padding: 12px 17px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   font-weight: 400;
-  border-radius: 15px;
+  border-radius: 12px;
   width: -moz-fit-content;
   width: fit-content;
   transition: background-color 0.3s;
 }
 .hero__button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.hero__button--tel {
+  background-color: rgba(16, 188, 131, 0.992);
+}
+.hero__button--tel:hover {
   background-color: rgba(0, 104, 69, 0.992);
 }
 .hero__button--tg {

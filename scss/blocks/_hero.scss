@@ -193,19 +193,27 @@
     }
 
     &__button {
-        background-color: rgba(16, 188, 131, 0.992);
+        background-color: rgb(255, 86, 86);
         padding: 12px 17px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
         font-weight: 400;
-        border-radius: 15px;
+        border-radius: 12px;
         width: fit-content;
         transition: background-color 0.3s;
     }
 
     &__button:hover {
+        background-color: rgb(255, 0, 0);
+    }
+
+    &__button--tel {
+        background-color: rgba(16, 188, 131, 0.992);
+    }
+
+    &__button--tel:hover {
         background-color: rgba(0, 104, 69, 0.992);
     }
 

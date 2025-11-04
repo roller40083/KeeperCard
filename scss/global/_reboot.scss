@@ -1,4 +1,8 @@
-// Общие стили для ссылок
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; // Должно быть больше высоты хедера
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -15,8 +19,7 @@ body {
     font-weight: 100;
     color: rgb(255, 255, 255);
     background-color: black;
-    padding-top: 110px; // Отступ для фиксированного header
-    
+    padding-top: 100px;
     &.menu-open {
         overflow: hidden;
     }

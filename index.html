@@ -14,14 +14,25 @@
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
-                <a href="#"><p class="header__logo">KeeperBelt</p></a>
+                <a href="#">
+                    <p class="header__logo">KeeperBelt</p>
+                </a>
                 <nav class="header__nav">
                     <ul class="header__nav-list">
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">Продукт</a>
+                            <a href="#" class="header__nav-link" id="product">Продукт</a>
                         </li>
                         <li class="header__nav-item">
-                            <a href="#" class="header__nav-link">Заказ</a>
+                            <a href="#" class="header__nav-link" id="order">Заказ</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#advantages" class="header__nav-link">Премущества</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#specs" class="header__nav-link">Характеристики</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#faq" class="header__nav-link">FAQ</a>
                         </li>
                     </ul>
                 </nav>
@@ -92,7 +103,7 @@
                                     </a>
                                 </li>
                                 <li class="hero__button-item">
-                                    <a href="tel: +7(960)0080001" class="hero__button">
+                                    <a href="tel: +7(960)0080001" class="hero__button hero__button--tel">
                                         <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.768">
                                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -141,8 +152,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="hero__advantages section__block">
-                            <h2 class="hero__advantages-title section__title">
+                        <div class="hero__advantages section__block" id="advantages">
+                            <h2 class="hero__advantages-title section__title" >
                                 <svg class="hero__advantages-icon" xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -164,8 +175,8 @@
                                 <li class="hero__advantages-item">Уникальный дизайн</li>
                             </ul>
                         </div>
-                        <div class="hero__specs section__block">
-                            <h2 class="hero__specs-title section__title">
+                        <div class="hero__specs section__block" id="specs">
+                            <h2 class="hero__specs-title section__title" >
                                 <svg class="hero__specs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round"
@@ -199,7 +210,7 @@
                             <p class="hero__specs-text">Гарантия 12 месяцев. Поддержка — ответ в течение 24 часов.</p>
                         </div>
 
-                        <div class="hero__FAQ section__block">
+                        <div class="hero__FAQ section__block" id="faq">
                             <h2 class="hero__FAQ-title hero__title">
                                 <img src="images/question-circle-svgrepo-com.svg" width="27" height="27" alt="">
                                 FAQ
@@ -253,7 +264,6 @@
 
         <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Следующее">›</button>
     </div>
-
 </body>
 <footer class="footer">
     <div class="footer__container">
